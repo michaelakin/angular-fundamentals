@@ -10,14 +10,21 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
-  { path: '', 
-    component: HomePageComponent 
+  {
+    path: '',
+    component: HomePageComponent
   },
-  { path: 'search',      
+  {
+    path: 'search',
+    redirectTo: '/search/angular',
+    pathMatch: 'full'
+  },
+  {
+    path: 'search/:query',
     component: GitSearchComponent,
-    data: { 
-      title: 'Git Search' 
-    } 
+    data: {
+      title: 'Git Search'
+    }
   },
   { path: '**', component: NotFoundComponent }
 ];
