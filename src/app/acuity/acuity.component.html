@@ -1,0 +1,43 @@
+<div class="container">
+  <!-- Content here -->
+  <div class="row">
+    <h3>Sunset blocker for Acuity Scheduling</h3>
+  </div>
+  <div class="row">
+    <form>
+      <button type="button" class="btn btn-primary" (click)="acuityAuthenticate()">Connect to your Acuity Account</button>
+      <div class="form-group row">
+        <label for="inputCity" class="col-sm-4 col-form-label">Enter nearest Big City</label>
+        <select class="custom-select custom-select-lg mb-3" id="inputCity">
+          <option selected>Select City</option>
+          <option value="1">City One</option>
+          <option value="2">City Two</option>
+        </select>
+      </div>
+      <div class="form-group row">
+          <label for="inputCalendar" class="col-sm-4 col-form-label">Select the calendar to block</label>
+          <select class="form-control" id="inputCalendar">
+            <option>Mike</option>
+            <option>Mike - Seniors</option>
+            <option>Mike - Headshot</option>
+          </select>
+        </div>
+      <div class="form-group row">
+        <label for="inputHours" class="col-sm-4 col-form-label">How many hours do you want to block on your schedule?</label>
+        <select class="form-control" id="inputHours">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group row">
+        <label for="inputWeeks" class="col-sm-4 col-form-label">How many weeks do you want to block on your schedule?</label>
+        <input type="number" id="inputWeeks" placeholder="weeks" step="1" />
+      </div>
+      <div class="form-group row">
+          <button type="button" class="btn btn-primary" >Block Calendar</button>
+      </div>
+    </form>
+  </div>
