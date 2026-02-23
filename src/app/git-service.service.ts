@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { GitSearch } from './git-search';
 import { HttpClient } from '@angular/common/http';
-// import 'rxjs/add/operator/toPromise';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,7 @@ export class GitSearchService {
         resolve(this.cachedValues[query])
       }
       else  {
-       this.http.get('https://api.github.com/search/repositories?q=' + query)
-       .toPromise()
+       firstValueFrom(this.http.get('https://api.github.com/search/repositories?q=' + query))
        .then( (response) => {
          resolve(response)
        }, (error) => {

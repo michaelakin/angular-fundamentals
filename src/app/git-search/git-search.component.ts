@@ -4,9 +4,10 @@ import { GitSearch } from '../git-search';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router'
 
 @Component({
-  selector: 'app-git-search',
-  templateUrl: './git-search.component.html',
-  styleUrls: ['./git-search.component.css']
+    selector: 'app-git-search',
+    templateUrl: './git-search.component.html',
+    styleUrls: ['./git-search.component.css'],
+    standalone: false
 })
 export class GitSearchComponent implements OnInit {
 

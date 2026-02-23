@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { GitSearchService } from './git-service.service';
 import { GitSearchComponent } from './git-search/git-search.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -35,21 +35,14 @@ const appRoutes: Routes = [
   { path: '**', component: NotFoundComponent }
 ];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    GitSearchComponent,
-    HomePageComponent,
-    NotFoundComponent,
-    AcuityComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  providers: [GitSearchService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        GitSearchComponent,
+        HomePageComponent,
+        NotFoundComponent,
+        AcuityComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        FormsModule,
+        RouterModule.forRoot(appRoutes)], providers: [GitSearchService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
